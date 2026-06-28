@@ -1,0 +1,13 @@
+{
+  "name": "github_scaner",
+  "version": "1.0.0",
+  "description": "Fetch GitHub repos and save to markdown",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
