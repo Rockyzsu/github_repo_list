@@ -28,6 +28,7 @@ export async function getRepos(token) {
           visibility: repo.private ? 'private' : 'public',
           description: repo.description || '',
           url: repo.html_url,
+          ssh_url: repo.ssh_url,
           updatedAt: repo.updated_at.slice(0, 10),
         });
       }

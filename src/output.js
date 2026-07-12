@@ -15,6 +15,7 @@ export function generateMarkdown(repos) {
       lines.push(`> ${repo.description}\n`);
     }
     lines.push(`- **URL**: [${repo.url}](${repo.url})`);
+    lines.push(`- **Repo**: ${repo.ssh_url}`);
     lines.push(`- **Last updated**: ${repo.updatedAt}`);
     lines.push('');
     lines.push('---\n');

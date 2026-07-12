@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
+import { existsSync, unlinkSync, writeFileSync } from 'node:fs';
 import { getRepos } from './src/github.js';
 import { generateMarkdown } from './src/output.js';
 
@@ -19,6 +19,9 @@ async function main() {
     console.log(`Found ${repos.length} repositories`);
 
     const markdown = generateMarkdown(repos);
+    if (existsSync(OUTPUT_FILE)) {
+      unlinkSync(OUTPUT_FILE);
+    }
     writeFileSync(OUTPUT_FILE, markdown, 'utf-8');
     console.log(`Saved to ${OUTPUT_FILE}`);
   } catch (err) {
